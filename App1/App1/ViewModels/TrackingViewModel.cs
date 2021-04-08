@@ -30,7 +30,7 @@
             IsBusy = true;
             _MyRestService = myRestService;
             TestButtonCommand = new Command(TestButtonCommandAction);
-            InitializeData();
+            // InitializeData();
         }
 
         private void TestButtonCommandAction(object obj) {
@@ -39,8 +39,8 @@
 
         public TrackingViewModel() {}
 
-        public void InitializeData() {
-            var trackingInfoRoot = _MyRestService.RefreshData(ProductCode);
+        public async Task InitializeData() {
+            var trackingInfoRoot = await _MyRestService.RefreshDataAsync(ProductCode);
             var sortedTrackingInfo = trackingInfoRoot.OrderByDescending(x => x.Record.timestamp);
             TrackingInfos = new ObservableCollection<Root>(sortedTrackingInfo);
             ImageSource = trackingInfoRoot.FirstOrDefault()?.Record.imgUrl;

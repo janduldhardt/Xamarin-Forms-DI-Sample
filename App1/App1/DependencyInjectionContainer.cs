@@ -7,8 +7,8 @@
 {
     public static IServiceCollection ConfigureServices(this IServiceCollection services)
     {
-        // services.AddSingleton<IRestService, RestService>();
-        services.AddSingleton<IRestService, FakeRestService>();
+        services.AddSingleton<IRestService, RestService>();
+        // services.AddSingleton<IRestService, FakeRestService>();
         services.AddTransient<MainViewModel>();
         services.AddTransient<TrackingViewModel>();
         return services;

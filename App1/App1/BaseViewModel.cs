@@ -1,30 +1,24 @@
 ﻿namespace App1 {
-   using System.Collections.Generic;
-   using System.ComponentModel;
-   using System.Runtime.CompilerServices;
+    using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.Runtime.CompilerServices;
 
-   public abstract class BaseViewModel : INotifyPropertyChanged {
-      public event PropertyChangedEventHandler PropertyChanged;
+    public abstract class BaseViewModel : INotifyPropertyChanged {
+        public event PropertyChangedEventHandler PropertyChanged;
 
-      protected void OnPropertyChanged(
-         [CallerMemberName] string propertyName = null) {
-         PropertyChanged?.Invoke(
-            this,
-            new PropertyChangedEventArgs(propertyName));
-      }
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null) {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs((propertyName)));
+        }
 
-      protected void SetValue<T>(
-         ref T backingField,
-         T value,
-         [CallerMemberName] string propertyName = null) {
-         if (EqualityComparer<T>.Default.Equals(
-            backingField,
-            value)) {
-            return;
-         }
+        protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null) {
+            if (EqualityComparer<T>.Default.Equals(storage, value)) {
+                return false;
+            }
 
-         backingField = value;
-         OnPropertyChanged(propertyName);
-      }
-   }
+            storage = value;
+            OnPropertyChanged(propertyName);
+
+            return true;
+        }
+    }
 }

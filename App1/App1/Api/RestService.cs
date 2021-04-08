@@ -12,25 +12,26 @@
 
     public class RestService : IRestService {
 
-        HttpClient client;
+        // HttpClient client;
 
         public List<Root> Items { get; private set; }
 
         public RestService() {
-            client = new HttpClient();
+            // client = new HttpClient() {
+            //                               Timeout = new TimeSpan(0,0,5)
+            //                           };
         }
 
 
         /// <inheritdoc />
-        public List<Root> RefreshData(string productCode) {
-            return RefreshDataAsync(productCode).Result;
-        }
+        public List<Root> RefreshData(string productCode) { return RefreshDataAsync(productCode).Result; }
 
         public async Task<List<Root>> RefreshDataAsync(string productCode) {
             Items = new List<Root>();
 
-            Uri uri = new Uri(string.Format(Constants.RestUrl, productCode));
+            Uri uri = new Uri($"{Constants.RestUrl}{productCode}");
             try {
+                using var client = new HttpClient();
                 HttpResponseMessage response = await client.GetAsync(uri);
                 if (response.IsSuccessStatusCode) {
                     string content = await response.Content.ReadAsStringAsync();

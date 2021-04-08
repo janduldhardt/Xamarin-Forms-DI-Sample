@@ -9,16 +9,18 @@
         <viewModels:MainViewModel />
     </ContentPage.BindingContext>
 
-    <StackLayout>
+    <StackLayout HorizontalOptions="Center">
         <Image Source="logo_food_tracker" Margin="16" />
         <!-- Place new controls here -->
         <StackLayout Orientation="Horizontal">
             <SearchBar x:Name="SearchBar" SearchButtonPressed="Button_OnClicked" Placeholder="Enter product code"
-                       Text="{Binding SearchText}" />
+                       Text="{Binding SearchText, Mode=TwoWay}" />
             <Button Text="&#xf029;" MinimumHeightRequest="50" FontFamily="{StaticResource FontAwesomeSolid}"
                     HorizontalOptions="Center" VerticalOptions="Start" FontSize="Large" BorderWidth="0"
                     WidthRequest="50" Command="{Binding QrButtonCommand}" BackgroundColor="Transparent" />
         </StackLayout>
+            <Label x:Name="LoadingSpinner" Text="&#xf110;" FontFamily="{StaticResource FontAwesomeSolid}" IsVisible="False" TextColor="Blue" HorizontalOptions="Center"/>
+            <Label x:Name="ErrorLabel" Text="Not found" IsVisible="False" TextColor="Red" HorizontalOptions="Center"/>
         <Button Text="Search" Clicked="Button_OnClicked" Margin="24" CornerRadius="20" />
     </StackLayout>
 

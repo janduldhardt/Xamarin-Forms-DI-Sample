@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:App1.ViewModels;assembly=App1"
+             x:Class="App1.Views.TrackingPage">
+    <ContentPage.BindingContext>
+        <viewModels:TrackingViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid RowDefinitions="3*,7*" BackgroundColor="White">
+            <ProgressBar Grid.RowSpan="2" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"
+                         BackgroundColor="White" IsVisible="{Binding IsBusy}" />
+            <Frame BorderColor="Black" CornerRadius="20" Margin="24,12,24,0" Padding="0">
+                <Grid>
+
+                    <Image Grid.Row="0" Source="{Binding ImageSource}" Aspect="Fill" />
+                    <Grid Grid.Row="0" VerticalOptions="End" Margin="18">
+                        <Label Text="{Binding CropName}" TextColor="White" FontSize="Medium"
+                               HorizontalOptions="Start" />
+
+                    </Grid>
+                </Grid>
+
+            </Frame>
+            <StackLayout Grid.Row="1" Margin="24">
+                <Label />
+                <ListView ItemsSource="{Binding TrackingInfos}" HasUnevenRows="True">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Margin="0,10,0,10">
+                                    <Label Text="{Binding Record.status}" />
+                                    <Label Text="{Binding Record.timestamp, StringFormat='{}{0:MMMMM d, yyyy  HH:mm}'}" />
+                                    <Label Text="{Binding Record.organization}" />
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+
+                </ListView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

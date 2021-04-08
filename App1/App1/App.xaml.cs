@@ -4,6 +4,8 @@ using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace App1 {
+    using Views;
+
     public partial class App : Application {
         public App() {
             InitializeComponent();

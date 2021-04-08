@@ -1,0 +1,50 @@
+﻿[
+  {
+    "Key": "4/6/2021, 3:23:59 AMA001",
+    "Record": {
+      "cropName": "Yubaki-Melon",
+      "docType": "tx",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/promai.appspot.com/o/yubaki-melon.jpg?alt=media",
+      "organization": "Hokkaidou-Melon-Farm",
+      "packageCode": "A001",
+      "status": "Packaged",
+      "timestamp": "4/6/2021, 3:23:59 AM"
+    }
+  },
+  {
+    "Key": "4/6/2021, 3:24:24 AMA001",
+    "Record": {
+      "cropName": "Yubaki-Melon",
+      "docType": "tx",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/promai.appspot.com/o/yubaki-melon.jpg?alt=media",
+      "organization": "Kerry-Express",
+      "packageCode": "A001",
+      "status": "In Transfer",
+      "timestamp": "4/6/2021, 3:24:24 AM"
+    }
+  },
+  {
+    "Key": "4/6/2021, 3:24:32 AMA001",
+    "Record": {
+      "cropName": "Yubaki-Melon",
+      "docType": "tx",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/promai.appspot.com/o/yubaki-melon.jpg?alt=media",
+      "organization": "FedEx",
+      "packageCode": "A001",
+      "status": "In Transfer",
+      "timestamp": "4/6/2021, 3:24:32 AM"
+    }
+  },
+  {
+    "Key": "4/6/2021, 3:24:40 AMA001",
+    "Record": {
+      "cropName": "Yubaki-Melon",
+      "docType": "tx",
+      "imgUrl": "https://firebasestorage.googleapis.com/v0/b/promai.appspot.com/o/yubaki-melon.jpg?alt=media",
+      "organization": "Tops-Supermarket",
+      "packageCode": "A001",
+      "status": "Delivered",
+      "timestamp": "4/6/2021, 3:24:40 AM"
+    }
+  }
+]

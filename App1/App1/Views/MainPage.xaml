@@ -9,9 +9,10 @@
     </ContentPage.BindingContext>
 
     <StackLayout>
+        <Image Source="logo_food_tracker" Margin="16"/>
         <!-- Place new controls here -->
-        <SearchBar x:Name="SearchBar" Text="{Binding SearchText}"/>
-        <Button Text="Search" Clicked="Button_OnClicked"></Button>
+        <SearchBar x:Name="SearchBar" SearchButtonPressed="Button_OnClicked" Placeholder="Enter product code" Text="{Binding SearchText}" Margin="24"/>
+        <Button Text="Search" Clicked="Button_OnClicked" MinimumWidthRequest="10" Margin="24"  CornerRadius="20"></Button>
     </StackLayout>
 
 </ContentPage>

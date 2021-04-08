@@ -17,5 +17,12 @@
 
             await Navigation.PushModalAsync(secondPage);
         }
+
+        private async void QrButton_OnClicked(object sender, EventArgs e) {
+            var scanner = new ZXing.Mobile.MobileBarcodeScanner();
+            // scanner.UseCustomOverlay = true;
+            var result = await scanner.Scan();
+            SearchBar.Text = result?.Text;
+        }
     }
 }

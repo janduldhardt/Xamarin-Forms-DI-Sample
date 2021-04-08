@@ -14,12 +14,6 @@
         public FakeRestService() {
         }
 
-        /// <inheritdoc />
-        public List<Root> RefreshData(string productCode) {
-            return RefreshDataAsync(productCode).Result;
-        }
-
-        /// <inheritdoc />
 
         /// <inheritdoc />
         public async Task<List<Root>> RefreshDataAsync(string productCode) {

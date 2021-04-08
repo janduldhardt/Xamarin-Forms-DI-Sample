@@ -7,7 +7,6 @@
 
         List<Root> Items { get; }
 
-        List<Root> RefreshData(string productCode);
         Task<List<Root>> RefreshDataAsync(string productCode);
     }
 }
